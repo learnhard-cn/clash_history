@@ -48,7 +48,6 @@ update_clash_bin() {
                 else
                     LOG "download file[$out_file] failed!"
                 fi
-                break
             done
             # 成功后，更新最新版本信息
             echo ${latest_version} > ${fn}/version

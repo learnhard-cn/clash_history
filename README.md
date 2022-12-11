@@ -6,9 +6,16 @@ clash binary history archive
 Use CDN URL:
 
 ```
-https://cdn.jsdelivr.net/gh/vlikev/clash_binary@main/premium/clash-linux-armv5-latest.gz
-https://cdn.jsdelivr.net/gh/vlikev/clash_binary@main/premium/clash-linux-armv7-latest.gz
-https://cdn.jsdelivr.net/gh/vlikev/clash_binary@main/premium/clash-linux-arm64-latest.gz
-https://cdn.jsdelivr.net/gh/vlikev/clash_binary@main/premium/clash-linux-amd64-latest.gz
+https://cdn.jsdelivr.net/gh/learnhard-cn/clash_history@main/premium/clash-linux-armv5-latest.gz
+https://cdn.jsdelivr.net/gh/learnhard-cn/clash_history@main/premium/clash-linux-armv7-latest.gz
+https://cdn.jsdelivr.net/gh/learnhard-cn/clash_history@main/premium/clash-linux-arm64-latest.gz
+https://cdn.jsdelivr.net/gh/learnhard-cn/clash_history@main/premium/clash-linux-amd64-latest.gz
 ...
+
+https://cdn.jsdelivr.net/gh/learnhard-cn/clash_history@main/release/clash-linux-armv5-latest.gz
+https://cdn.jsdelivr.net/gh/learnhard-cn/clash_history@main/release/clash-linux-armv7-latest.gz
+https://cdn.jsdelivr.net/gh/learnhard-cn/clash_history@main/release/clash-linux-arm64-latest.gz
+https://cdn.jsdelivr.net/gh/learnhard-cn/clash_history@main/release/clash-linux-amd64-latest.gz
+...
+
 ```

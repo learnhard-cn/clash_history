@@ -14,7 +14,6 @@ update_clash_bin() {
         # Get latest binary download URL
         if [ "$fn" = "premium" ] ; then
             latest_url="https://github.com/Dreamacro/clash/releases/expanded_assets/premium"
-            curl -L ${latest_url} | awk '/Dreamacro.clash.releases.download/ { gsub(/href=|["]/,""); print "https://github.com"$2 }' > ${tmpfile}
             latest_version=`awk -F'-' '/clash-linux-amd64/{ sub(".gz",""); print $NF}' ${tmpfile}`
         else
             url_302="https://github.com/Dreamacro/clash/releases/latest"
@@ -25,7 +24,7 @@ update_clash_bin() {
             fi
             latest_url="https://github.com/Dreamacro/clash/releases/expanded_assets/${latest_version}"
         fi
-        
+        curl -L ${latest_url} | awk '/Dreamacro.clash.releases.download/ { gsub(/href=|["]/,""); print "https://github.com"$2 }' > ${tmpfile}
         # Check latest binary version
         cur_version=`cat ${fn}/version`
         

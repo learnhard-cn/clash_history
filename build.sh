@@ -14,7 +14,7 @@ update_clash_bin() {
         # Get latest binary download URL
         if [ "$fn" = "premium" ] ; then
             latest_url="https://github.com/Dreamacro/clash/releases/expanded_assets/premium"
-            latest_version=`awk -F'-' '/clash-linux-amd64/{ sub(".gz",""); print $NF}' ${tmpfile}`
+            latest_version=`curl -L ${latest_url} | sed -n 's/.*\(clash-linux-armv7.*.gz\).*/\1/p' |head -1`
         else
             url_302="https://github.com/Dreamacro/clash/releases/latest"
             latest_version=`curl -I ${url_302} | awk -F'/' '/^location/{ print $NF }'`
@@ -27,7 +27,6 @@ update_clash_bin() {
         curl -L ${latest_url} | awk '/Dreamacro.clash.releases.download/ { gsub(/href=|["]/,""); print "https://github.com"$2 }' > ${tmpfile}
         # Check latest binary version
         cur_version=`cat ${fn}/version`
-        
         if [ "${cur_version}" != "${latest_version}" ] ; then
             # 下载新版本
             for dn in `cat ${tmpfile}`
@@ -43,6 +42,7 @@ update_clash_bin() {
                     # 下载成功
                     rm -f ${fn}/${latest_file}
                     mv ${out_file} ${fn}/${latest_file}
+                    cp ${fn}/${latest_file}  ${fn}/${out_file}
                 else
                     LOG "download file[$out_file] failed!"
                 fi
